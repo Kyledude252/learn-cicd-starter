@@ -7,9 +7,9 @@ import (
 
 func TestGetAPIKey(t *testing.T) {
 	type test struct {
-		headerKey string
+		headerKey   string
 		headerValue string
-		want string
+		want        string
 	}
 
 	tests := []test{
@@ -18,7 +18,7 @@ func TestGetAPIKey(t *testing.T) {
 		{headerKey: "Authorization", headerValue: "aKey", want: ""},
 	}
 
-	for _,tc := range tests {
+	for _, tc := range tests {
 		header := http.Header{}
 		header.Add(tc.headerKey, tc.headerValue)
 		got, _ := GetAPIKey(header)
